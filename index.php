@@ -1,71 +1,98 @@
-<?php declare(strict_types = 1);?> 
-
-<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-<?php $name = null;
-
- function name( $name){ ?>
-<h1><?php echo $name; ?></h1>
-<?php } 
-
-name("Rima");
-
-
-function twoVar ( String $first) {
-if($first == true){?>
+<?php
+$beautiful = array("Suomija", "Lenkija", "Vokietija", "Bulgarija", "Gruzija", "Baltarusija", "Rusija", "Kroatija");
+foreach ($beautiful as $key => $country){
     
-    <h1><?php echo $first; ?></h1>
-    <?php
-}
-else if($first !== true){
-    echo( $first);
-}
-else if ($first == "" ){
-
-    return false;
+    echo "<pre>";
+    print_r($key);
+    echo(" ");
+    print_r($country);
+    
+    echo "</pre>";
     
 }
 
-}
- twoVar("vardas");
+$shopping_cart = [
+    [
+        'type' => 'vegetables',
+        'name' => 'potato',
+        'quantity' => '10',
+        'price' => '1.0'
+    ],
+    [
+        'type' => 'vegetables',
+        'name' => 'onion',
+        'quantity' => '5',
+        'price' => '0.5'
+    ],
+    [
+        'type' => 'vegetables',
+        'name' => 'cucumber',
+        'quantity' => '2',
+        'price' => '1.2'
+    ],
+     [
+        'type' => 'fruits',
+        'name' => 'banana',
+        'quantity' => '2',
+        'price' => '1.0'
+     ],
+     [
+        'type' => 'fruits',
+        'name' => 'apple',
+        'quantity' => '3',
+        'price' => '1.2'
+     ]
+];
 
- //$name = "vardenis";
- function newName (  $name) {
-    if($name == "vardenis"){?>
+
+
+    foreach ($shopping_cart as $key => $pirkinys){
+        //   echo "<pre>";
+        // print_r($key);
+        // echo(" ");
+       // print_r($pirkinys);
         
-        <h1><?php echo $name; ?></h1>
-        <?php
-    }
-    else if($name !== "vardenis"){
-        echo( $name) ."<br>";
-    }
-    else if ($name == "" ){
-    
-        return false ;
+        //echo "</pre>";
+        foreach($pirkinys as $key => $vaisius){
+           
+            if($vaisius !== "banana" && $vaisius !=="apple" ){
+                continue;
+        }
+        
+         echo "<pre>";
+        // print_r($key);
+        echo(" ");
+        print_r($vaisius);
+         echo "</pre>";
         
     }
-    
     }
-     neWname('traktoriukas');
-
-
-function emotion($emo){
-    If($emo == "happy"){
-        echo (" :)" );
+    foreach ($shopping_cart as $key => $pirkinys){
+        //   echo "<pre>";
+        // print_r($key);
+        // echo(" ");
+       // print_r($pirkinys);
+        
+        //echo "</pre>";
+        foreach($pirkinys as $key => $vaisius){
+           
+            if($vaisius !== "potato" && $vaisius !=="onion" && $vaisius !== "cucumber"){
+                continue;
+        }
+        
+         echo "<pre>";
+        // print_r($key);
+        echo(" ");
+        print_r($vaisius);
+         echo "</pre>";
+        
     }
-    else if ($emo == "sad"){
-        echo ( " :(" );
-    }else{
-        echo (":|");
     }
+echo( $shopping_cart[3]['quantity']*$shopping_cart[3]['price']+$shopping_cart[4]['quantity']*$shopping_cart[4]['price']). "<br>";
+echo( $shopping_cart[0]['quantity']*$shopping_cart[0]['price']+$shopping_cart[1]['quantity']*$shopping_cart[1]['price']+$shopping_cart[2]['quantity']*$shopping_cart[2]['price']). "<br>";
 
-}
+$countrys = array("Suomija", "Lenkija", "Vokietija", "Bulgarija", "Gruzija", "Baltarusija", "Rusija", "Kroatija",);
+echo end($countrys);// paprastas variantas, bet negrazina jei tuscias;
 
-
-
-name("Rima") ;
-echo (" is "); 
-emotion( "happy"); 
-echo (" today");
-
-
+//nespejau toliau
 ?>
